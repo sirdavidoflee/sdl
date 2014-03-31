@@ -1,0 +1,7 @@
+/*body { background: blue; }*/
+
+#coastline { width: 100%; }
+
+.work-list li { width: 23%; margin: 0 1% 2%; border-width: 1%; height: auto; }
+.work-list li a { height: auto; }
+.work-list li img { width: 100%; }

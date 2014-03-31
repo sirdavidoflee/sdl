@@ -1,0 +1,9 @@
+/*###############################################
+
+All Internet Explorer 7 Specific code goes here.
+This will by default effect IE7 and below, if
+you need to make this file ONLY effect IE7,
+change the html file's html if statement from
+this: [if lte IE 7] to this: [if IE 7]
+
+###############################################*/

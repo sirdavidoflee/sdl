@@ -1,0 +1,161 @@
+@font-face {
+    font-family: 'Museo500';
+    src: url('../fnt/museo500-regular-webfont.eot');
+    src: url('../fnt/museo500-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fnt/museo500-regular-webfont.woff') format('woff'),
+         url('../fnt/museo500-regular-webfont.ttf') format('truetype'),
+         url('../fnt/museo500-regular-webfont.svg#museo500') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Reset Browser Defaults */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, button, table, caption, tbody, tfoot, thead, tr, th, td {	margin: 0; padding: 0; border: 0; outline: 0; font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; }
+ol, ul { list-style: none; }
+table { border-spacing: 0; border-collapse: collapse; }
+caption, th, td { text-align: left; font-weight: normal; }
+
+/* Basic Tag Styles */
+body { font: normal 14px/20px "Arial", sans-serif; background: #f4eed9; }
+p, address { font-size: 14px; color: #5a5b5b; padding: 0 0 15px; line-height: 21px; }
+textarea { resize: none; }
+
+a, a:link, a:visited { text-decoration: underline; color: #f26935; font-weight: bold }
+a:hover, a:active { color: #003a67; text-decoration: underline; }
+
+strong { font-weight: bold; }
+em { font-style: italic; }
+
+h1, h2 {
+	font: normal 30px/35px "Museo500", "Myriad Pro", "Arial", sans-serif;
+	color: #eb4e5f;
+	padding: 0 0 12px;
+}
+h2 {
+	color: #f26935;
+	background: url('../img/bg-dotted.png') left bottom repeat-x;
+	padding: 25px 0 20px;
+	margin: 0 0 20px;
+}
+
+/*#########################*/
+/*#### Content style ####*/
+/*#####################*/
+
+header {
+	background: url('../img/bg-site.jpg') center top no-repeat;
+	padding: 40px 0;
+	position: relative;
+}
+header .logo {
+	display: block;
+	margin: 0 auto;
+	width: 980px;
+	height: 0;
+	overflow: hidden;
+	padding: 410px 0 0;
+	background: url('../img/logo.png') 0 0 no-repeat;
+}
+
+section.main {
+	width: 640px;
+	padding: 76px 340px 0 0;
+	margin: 0 auto;
+	background: url('../img/bg-content.jpg') right 76px no-repeat;
+}
+
+.info-list {
+/*	overflow: hidden;*/
+}
+.info-list li {
+	width: 45%;
+	margin: 0 5% 0 0;
+	float: left;
+	padding: 0 0 60px;
+}
+.info-list img {
+	padding: 2.5%;
+	background: #fff;
+	width: 95%;
+	-moz-box-shadow:    3px 3px 5px 6px #ccc;
+	-webkit-box-shadow: 3px 3px 5px 6px #ccc;
+	box-shadow:         0 0 3px 0 rgba(0, 0, 0, 0.4);
+}
+
+p.overview {
+	font-size: 16px;
+	line-height: 24px;
+}
+
+address {
+	height: 130px;
+}
+address span {
+	display: block;
+	line-height: 18px;
+}
+address .place {
+	font-weight: bold;
+}
+
+a.registry {
+	display: inline-block;
+	padding: 0 0 33px;
+}
+a.registry:hover {
+	opacity: .5;
+}
+a.donate {
+	display: block;
+	width: 125px;
+	height: 0;
+	padding: 30px 0 0;
+	overflow: hidden;
+	background: url('../img/btn-donate.jpg') 0 0 no-repeat;
+}
+a.donate:hover {
+	opacity: 0.5;
+}
+
+footer {
+	margin: 55px 0 0;
+	background: #eb4e5f url('../img/bg-footer.jpg') left 0 repeat-x;
+	padding: 45px 0 25px;
+}
+footer .secret {
+	display: block;
+	width: 60px;
+	height: 0;
+	padding: 52px 0 0;
+	overflow: hidden;
+	background: url('../img/bg-secret.png') 0 0 no-repeat;
+}
+
+
+
+
+
+
+
+
+
+
+.zigzag {
+	display: block;
+	position: absolute;
+	background: url('../img/bg-zigzag.png') 0 0 repeat-x;
+	height: 52px;
+	left: 0;
+	bottom: -26px;
+	width: 100%;
+}
+
+/* CLEARFIX GOES LAST ALWAYS */
+
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+.clearfix { display: inline-block; }
+
+/* Hides from IE-mac \*/ 
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* End hide from IE-mac */

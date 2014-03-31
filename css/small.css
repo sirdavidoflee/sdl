@@ -1,0 +1,7 @@
+#coastline { width: 100%; }
+
+
+.work-list li { width: auto; height: auto; background: #fcfcfc; float: none; margin: 0 10px 20px; text-align: center; position: relative; }
+.work-list li a { border: 10px solid #33badc; display: block; overflow: hidden; height: auto; }
+.work-list li img { width: 100%; height: auto; display: block; }
+.work-list li h4 { font-size: 40px; line-height: 50px; padding: 30px 0 0; width: 90%; left: 5%; }

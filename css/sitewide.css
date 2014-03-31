@@ -1,0 +1,140 @@
+@font-face {
+    font-family: 'Kelmscott';
+    src: url('../fonts/kelmscot-webfont.eot');
+    src: url('../fonts/kelmscot-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/kelmscot-webfont.woff') format('woff'),
+         url('../fonts/kelmscot-webfont.ttf') format('truetype'),
+         url('../fonts/kelmscot-webfont.svg#KelmscottRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ChunkFive';
+    src: url('../fonts/Chunkfive-webfont.eot');
+    src: url('../fonts/Chunkfive-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Chunkfive-webfont.woff') format('woff'),
+         url('../fonts/Chunkfive-webfont.ttf') format('truetype'),
+         url('../fonts/Chunkfive-webfont.svg#ChunkFiveRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Reset Browser Defaults */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, button, table, caption, tbody, tfoot, thead, tr, th, td {	margin: 0; padding: 0; border: 0; outline: 0; font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; }
+ol, ul { list-style: none; }
+table { border-spacing: 0; border-collapse: collapse; }
+caption, th, td { text-align: left; font-weight: normal; }
+
+::-moz-selection { background: #33BADC; color: #fff; }
+::selection { background: #33BADC; color: #fff; }
+
+div.pure-selfishness::-moz-selection { background: #33BADC; color: #fff; }
+div.pure-selfishness::selection { background: #33BADC; color: #fff; }
+
+div.header *::-moz-selection, div.header *::-moz-selection { background: #000; color: #fff; }
+div.header *::selection, div.header *::selection { background: #000; color: #fff; }
+
+/* Style Guide */
+
+body { font: normal 15px "Arial", sans-serif; padding: 0; background: url('../img/bg-site.gif') 0 0 repeat; color: #333; letter-spacing: 0; overflow-y: scroll; }
+body.modal-on { overflow: hidden; }
+body.node-type-webform { background: #fff; }
+
+h1 { font: normal 35px "Kelmscott", "Georgia", "Times New Roman", sans-serif; overflow: hidden; padding: 0; text-align: center; }
+h2 { font: normal 35px/40px "ChunkFive", "Arial", sans-serif; color: #000; letter-spacing: 2px; padding: 50px 0 20px 5px; }
+.pure-selfishness h2 { padding: 0 0 3px; }
+h2 em { font-style: normal; background: url('../img/accent.png') 5px -4px no-repeat; }
+h2 a { font: normal 14px/14px "Arial", sans-serif; letter-spacing: 0; display: inline; vertical-align: middle; }
+h4 { font: normal 25px/30px "ChunkFive", "Arial", sans-serif; }
+h6 { font: normal 20px/20px "ChunkFive", "Arial", sans-serif; text-align: center; }
+.cut h6 { font: bold 20px/20px "Arial", sans-serif; text-align: left; padding: 15px 0 0; }
+.page-technology-hardware h4 { font: bold 25px/25px "Arial", sans-serif; }
+a:link, a:visited { color: #26839a; text-decoration: none; font-weight: bold; }
+a:hover { color: #d1af28; }
+p { font: normal 14px/22px "Arial", sans-serif; padding: 0 0 20px; color: #5f5153; }
+strong { font-weight: bold; }
+em { font-style: italic; }
+sub { vertical-align: baseline; font-size: 70%; }
+
+#coastline { width: 960px; margin: 0 auto; }
+
+.pure-selfishness { border: 25px solid #33badc; padding: 30px 30px 25px; margin: 0 5px; background: #e3f9ff; }
+
+.the-best-work-youve-ever-seen { width: auto; }
+.work-list { overflow: hidden; }
+.work-list li { width: 220px; height: 195px; background: #fcfcfc; float: left; margin: 0 10px 20px; text-align: center; position: relative; }
+.work-list li a { border: 10px solid #33badc; display: block; overflow: hidden; height: 172px; }
+.work-list li.on a { border-color: #d1af28; }
+.work-list li img { width: 200px; height: auto; display: block; }
+.work-list li .details { display: none; }
+.work-list li h4 { font: normal 23px/26px "ChunkFive", "Arial", sans-serif; position: absolute; left: 0; top: 0; color: #000; padding: 20px 20px 0 20px; display: none; width: 180px; }
+.work-list li a.title { color: #000; font-weight: normal; border: none; height: auto; }
+.work-list li ul {  }
+.work-list li ul li {  }
+
+.the-boring-stuff { overflow: hidden; }
+
+.cut { width: 46%; float: left; padding: 0 4% 0 7px; }
+.cut-end { padding: 0; }
+.cut dl { overflow: hidden; padding: 15px 20px 30px 0; }
+.cut dt { font-weight: bold; font-style: italic; }
+.cut dd { padding: 0 0 20px; }
+.cut dl.dated { padding: 0 20px 30px 10px; }
+.cut dl.dated dt { padding: 15px 0 0; }
+.cut dl.dated dd { padding: 0; }
+.cut span.time { float: right; padding: 15px 20px 0 0; font-style: italic; font-weight: bold; }
+.cut dl span.time { padding: 0; }
+
+
+a.download { display: block; clear: both; }
+
+.header { padding: 30px 0 0; }
+.header h1 { background: url('../img/logo.png') center bottom no-repeat; padding: 0 0 210px; margin: 0 0 12px; }
+.header h6 { padding: 0 0 40px; width: 300px; margin: 0 auto; }
+
+
+.footer { clear: both; padding: 30px 0 20px 25px; border-top: 15px solid #33badc; margin: 40px 0 0; }
+
+
+
+.modal-bg { /*display: none;*/ background: url('../img/bg-modal.png') 0 0 repeat; position: absolute; top: 0; left: 0; height: 100%; display: none; width: 100%; }
+.all-modal { width: 100%; height: 100%; overflow: auto; position: fixed; top: 0; left: 0; display: none; }
+.modal { width: 645px; display: none; background: #fff; margin: 70px auto 0; position: relative; z-index: 5; }
+.modal .modal-content { padding: 32px 30px; }
+
+.modal .modal-content li { display: none; }
+.modal .modal-content li.current { display: block; }
+
+.modal img { width: 587px; height: auto; }
+.modal h2 { padding: 0; }
+.modal a.site-link { float: right; }
+.modal dl { overflow: hidden; font: bold 13px/18px "Arial", sans-serif; padding: 0 0 10px; }
+.modal dt { float: left; }
+.modal dd { margin: 0 0 0 100px; font-weight: normal; }
+.modal h6 { font: italic normal 25px/25px "Georgia", "Times New Roman", serif; color: #0675B1; }
+.modal .nav { overflow: hidden; padding: 20px 0 0; }
+.modal .nav a { float: left; width: 41px; height: 0; padding: 41px 0 0; overflow: hidden; background: url('../img/bg-modal-prev.jpg') 0 0 no-repeat; }
+.modal .nav span { float: left; font: italic normal 17px/20px "Georgia", "Times New Roman", serif; color: #858384; padding: 11px 10px 0; }
+.modal .nav span.off { padding: 11px 10px 0 0; }
+.modal .nav a.prev {  }
+.modal .nav a.next { background-image: url('../img/bg-modal-next.jpg'); }
+.modal .nav a:hover { background-position: 0 -41px; }
+.modal .nav a.off { background-position: 0 -82px; cursor: default; }
+.modal em, .modal strong { font-style: normal; font-weight: normal; }
+a.button-close { width: 35px; height: 35px; background: url('../img/bg-close.png') 0 0 no-repeat; position: absolute; right: -10px; top: -10px; margin: 0; }
+a.button-close:hover { background-position: 0 -35px; }
+
+
+
+
+
+
+/* CLEARFIX GOES LAST ALWAYS */
+
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+.clearfix { display: inline-block; }
+
+/* Hides from IE-mac \*/ 
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* End hide from IE-mac */
