@@ -1,0 +1,515 @@
+@import "reset.scss";
+@import "variables.scss";
+@import "mixins.scss";
+@import "defaults.scss";
+
+
+/* Header Styles
+=============================================*/
+
+header {
+    padding: 25px 0 0;
+    
+    h1 {
+        margin: 0 0 12px;
+        padding: 0;
+    }
+    .logo {
+        display: block;
+        margin: 0 auto 20px;
+    }
+}
+
+
+/* Main Content Styles
+=============================================*/
+section {
+    
+    &.the-boring-stuff {
+        overflow: hidden;
+        
+        h2 {
+            padding: 50px 0 20px 2%;
+        }
+    }
+    
+    &.pure-selfishness {
+        background: #fff;
+        border: 25px solid #33badc;
+        margin: 30px 0 0;
+        padding: 2%;
+        
+        h2 {
+            padding: 10px 0 20px 0;
+        }
+    }
+}
+
+.work-list {
+    list-style-type: none;
+    text-align: center;
+    
+    li {
+        border: 14px solid #26839a;
+        display: inline-block;
+        margin: 10px 0.5% 10px;
+        overflow: hidden;
+        position: relative;
+        vertical-align: top;
+        width: 22%;
+        
+        &.more {
+            display: none;
+        }
+        
+        .details {
+            display: none;
+        }
+        
+        h4 {
+            margin: 0 auto;
+            text-align: left;
+            //width: 96%;
+        }
+        
+        img {
+            
+            display: block;
+            height: auto;
+            opacity: 0.9;
+            width: 100%;
+            
+            @include transition(all .2s linear);
+        }
+        a.title {
+            bottom: 28px;
+            left: 8px;
+            opacity: 0;
+            position: absolute;
+            width: 87%;
+            
+            @include transform(rotate(10deg));
+            @include transition(all .1s linear);
+        }
+        &:hover {
+            background: #fff;
+            border-color: #d1af28;
+            
+            img {
+                opacity: 0.1;
+            }
+            
+            a.title {
+                bottom: 8px;
+                color: #26839a;
+                opacity: 1;
+                @include transform(rotate(0));
+            }
+        }
+    }
+}
+
+.cut {
+    display: inline-block;
+    padding: 0 2%;
+    vertical-align: top;
+    width: 46%;
+    
+    h4 {
+        margin: 0;
+        padding: 30px 0 10px;
+    }
+    
+    h6 {
+        font: bold 20px/20px "Arial", sans-serif;
+        margin: 0;
+        padding: 20px 0 10px;
+        text-align: left;
+    }
+    
+    dl {
+        overflow: hidden;
+        padding: 15px 20px 30px 0; 
+        
+        dt {
+            font-weight: bold;
+            font-style: italic; 
+        }
+        dd {
+            padding: 0 0 20px; 
+        }
+        span.time { 
+            padding: 0; 
+        }
+        
+        &.dated {
+            padding: 0 20px 30px 10px;
+        
+            dt {
+                padding: 15px 0 0; 
+            }
+            dd {
+                padding: 0; 
+            } 
+        }
+    }
+    span.time {
+        float: right;
+        padding: 15px 20px 0 0;
+        font-style: italic;
+        font-weight: bold; 
+    }
+}
+
+
+
+/* Footer Styles
+=============================================*/
+footer {
+    background: #fff;
+    clear: both;
+    padding: 23px 0 20px 25px;
+    border-top: 15px solid #33badc;
+    margin: 40px 0 0;
+}
+
+
+
+.modal-bg {
+    background: url('../img/bg-modal.png') 0 0 repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    display: none;
+    width: 100%;
+}
+
+.all-modal {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.modal {
+    width: 80%;
+    display: none;
+    background: #fff;
+    margin: 70px auto 0;
+    position: relative;
+    z-index: 5;
+    
+    .modal-content {
+        padding: 32px 30px;
+        li {
+            display: none;
+            &.current {
+                display: block;
+            }
+        }
+    }
+    img {
+        width: 100%;
+        height: auto;
+    }
+    h2 {
+        padding: 0;
+    }
+    a.site-link {
+        display: block;
+        text-align: right;
+        width: 100%;
+    }
+    dl {
+        overflow: hidden;
+        font: bold 13px/18px "Arial", sans-serif;
+        padding: 0 0 10px;
+    }
+    dt {
+        float: left;
+    }
+    dd {
+        margin: 0 0 0 100px;
+        font-weight: normal;
+    }
+    h6 {
+        font: italic normal 25px/25px "Georgia", "Times New Roman", serif;
+        color: #0675B1;
+    }
+    .nav {
+        overflow: hidden;
+        padding: 0 0 20px;
+        a {
+            float: left;
+            width: 41px;
+            height: 0;
+            padding: 41px 0 0;
+            overflow: hidden;
+            background: url('../img/bg-modal-prev.jpg') 0 0 no-repeat;
+        }
+        span {
+            float: left;
+            font: italic normal 17px/20px "Georgia", "Times New Roman", serif;
+            color: #858384;
+            padding: 11px 10px 0;
+            &.off {
+                padding: 11px 10px 0 0;
+            }
+        }
+        a {
+            &.prev! {}
+            &.next {
+                background-image: url('../img/bg-modal-next.jpg');
+            }
+            &:hover {
+                background-position: 0 -41px;
+            }
+            &.off {
+                background-position: 0 -82px;
+                cursor: default;
+            }
+        }
+    }
+    em, strong {
+        font-style: normal;
+        font-weight: normal;
+    }
+}
+
+a.button-close {
+    width: 35px;
+    height: 35px;
+    background: url('../img/bg-close.png') 0 0 no-repeat;
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    margin: 0;
+
+    &:hover {
+        background-position: 0 -35px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Media Queries
+=============================================*/
+/* Media Queries
+=============================================*/
+/* Smartphones (all orientations) ----------- */
+//@media only screen
+//and (max-width : 480px){
+@media screen and (max-width: 70em){
+    
+}
+
+@media screen and (max-width: 60em){
+    
+    .work-list {
+    
+        li {
+            width: 48%;
+        }
+    }
+    .cut {
+        display: block;
+        padding: 0 2%;
+        vertical-align: top;
+        width: auto;
+    }
+    
+}
+    
+@media screen and (max-width: 44em){
+    
+    #coastline {
+        margin: 80px auto 0;
+    }
+    
+    header {
+        background: #fff;
+        left: 0;
+        overflow: hidden;
+        min-height: 80px;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 100;
+        
+        @include box-shadow(0 0 10px rgba(0, 0, 0, 0.25));
+        
+        h1 {
+            font-size: 32px;
+            margin: 0 0 10px 100px;
+            text-align: left;
+        }
+        h6 {
+            display: none;
+            font-size: 18px;
+            margin: 0 0 0 100px;
+            text-align: left;
+            width: 290px;
+        }
+        
+        .logo {
+            height: auto;
+            left: 19px;
+            position: absolute;
+            top: 6px;
+            width: 60px;
+        }
+    }
+    
+    section.pure-selfishness {
+        background: #fff;
+        border: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    h2.current-section {
+        height: 105px;
+        
+        span {
+            background: #bcf2ff;
+            font-size: 25px;
+            left: 0;
+            line-height: 30px;
+            padding: 10px 0 2px 18px;
+            position: fixed;
+            top: 80px;
+            width: 100%;
+            z-index: 99;
+            
+            em {
+                background-position: 5px -6px;
+            }
+        }
+    }
+    
+    .work-list {
+    
+        li {
+            display: none;
+            width: 100%;
+            
+            &.shown, &.more {
+                display: block;
+            }
+            &.more {
+                background: #bcf2ff;
+                border: none;
+                font: normal 25px/30px "ChunkFive", "Arial", sans-serif;
+                margin: 15px 0 0;
+                padding: 8px 0;
+            }
+        }
+        &.show-the-rest li {
+            display: block;
+        }
+    }
+    
+    .all-modal {
+        top: 80px;
+        
+        .modal {
+            width: 90%;
+        }
+    }
+    
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen
+and (max-width : 480px)
+and (orientation : landscape) {
+	section#main{
+		/*width: 480px;*/
+	}
+}
+/* Smartphones (portrait) ----------- */
+@media only screen
+and (max-width : 320px)
+and (orientation : portrait) {
+	section#main{
+		/*width: 320px;*/
+	}
+}
+/* iPads (landscape) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : landscape) {
+	section#main{
+		/*width: 1024px;*/
+	}
+}
+/* iPads (portrait) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : portrait) {
+	section#main{
+		/*width: 768px;*/
+	}
+}
+/* Desktops and laptops ----------- */
+@media only screen
+and (min-width : 1224px) {
+	section#main{
+		/*width: 960px;*/
+	}
+}
+/* Large screens ----------- */
+@media only screen
+and (min-width : 1600px) {
+	section#main{
+		/*width: 1600px;*/
+	}
+}
+/* Retina ----------- */
+@media
+only screen and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (-o-min-device-pixel-ratio: 3/2),
+only screen and (min-device-pixel-ratio : 1.5) {
+	img{
+		background-image: url(../img/pic@2x.jpg);
+		-webkit-background-size: 100px 100px;
+		background-size: 100px 100px;
+	}
+}
+
+/* Clearfix - if you use proper coding techniques 
+   you shouldn't have to use this anymore
+=============================================*/
+.cf:before,
+.cf:after {
+	content: "";
+	display: table;
+}
+.cf:after{
+	clear: both;
+}
+.cf{
+	*zoom: 1;
+}
+
+// Below makes all width the same regardless of padding.
+*{
+    @include box-sizing(border-box);
+}

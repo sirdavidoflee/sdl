@@ -1,140 +1,508 @@
+/* Reset & Normalization
+=============================================*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, a,
+abbr, acronym, address, big, cite, code, del,
+dfn, em, img, ins, kbd, q, s, samp, small, strike,
+strong, sub, sup, tt, var, b, u, i, center, dl, dt,
+dd, ol, ul, li, fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td, article,
+aside, canvas, details, embed, figure, figcaption,
+footer, header, hgroup, menu, nav, output, ruby, section,
+summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, dialog {
+  display: block; }
+
+audio, canvas, video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1; }
+
+audio:not([controls]) {
+  display: none; }
+
+[hidden] {
+  display: none;
+  visibility: hidden; }
+
 @font-face {
-    font-family: 'Kelmscott';
-    src: url('../fonts/kelmscot-webfont.eot');
-    src: url('../fonts/kelmscot-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/kelmscot-webfont.woff') format('woff'),
-         url('../fonts/kelmscot-webfont.ttf') format('truetype'),
-         url('../fonts/kelmscot-webfont.svg#KelmscottRegular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
+  font-family: 'Kelmscott';
+  src: url("../fnt/kelmscot-webfont.eot");
+  src: url("../fnt/kelmscot-webfont.eot?#iefix") format("embedded-opentype"), url("../fnt/kelmscot-webfont.woff") format("woff"), url("../fnt/kelmscot-webfont.ttf") format("truetype"), url("../fnt/kelmscot-webfont.svg#KelmscottRegular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
 @font-face {
-    font-family: 'ChunkFive';
-    src: url('../fonts/Chunkfive-webfont.eot');
-    src: url('../fonts/Chunkfive-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/Chunkfive-webfont.woff') format('woff'),
-         url('../fonts/Chunkfive-webfont.ttf') format('truetype'),
-         url('../fonts/Chunkfive-webfont.svg#ChunkFiveRegular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
+  font-family: 'ChunkFive';
+  src: url("../fnt/Chunkfive-webfont.eot");
+  src: url("../fnt/Chunkfive-webfont.eot?#iefix") format("embedded-opentype"), url("../fnt/Chunkfive-webfont.woff") format("woff"), url("../fnt/Chunkfive-webfont.ttf") format("truetype"), url("../fnt/Chunkfive-webfont.svg#ChunkFiveRegular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
 
-/* Reset Browser Defaults */
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, button, table, caption, tbody, tfoot, thead, tr, th, td {	margin: 0; padding: 0; border: 0; outline: 0; font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; }
-ol, ul { list-style: none; }
-table { border-spacing: 0; border-collapse: collapse; }
-caption, th, td { text-align: left; font-weight: normal; }
+/* Variables
+=============================================*/
+/* Mixins
+=============================================*/
+::-moz-selection {
+  background: #33BADC;
+  color: #fff; }
 
-::-moz-selection { background: #33BADC; color: #fff; }
-::selection { background: #33BADC; color: #fff; }
+::selection {
+  background: #33BADC;
+  color: #fff; }
 
-div.pure-selfishness::-moz-selection { background: #33BADC; color: #fff; }
-div.pure-selfishness::selection { background: #33BADC; color: #fff; }
+div.pure-selfishness::-moz-selection {
+  background: #33BADC;
+  color: #fff; }
 
-div.header *::-moz-selection, div.header *::-moz-selection { background: #000; color: #fff; }
-div.header *::selection, div.header *::selection { background: #000; color: #fff; }
+div.pure-selfishness::selection {
+  background: #33BADC;
+  color: #fff; }
+
+div.header *::-moz-selection, div.header *::-moz-selection {
+  background: #000;
+  color: #fff; }
+
+div.header *::selection, div.header *::selection {
+  background: #000;
+  color: #fff; }
 
 /* Style Guide */
+body {
+  font: normal 15px "Arial", sans-serif;
+  padding: 0;
+  background: url("../img/bg-site.gif") 0 0 repeat;
+  color: #333;
+  letter-spacing: 0;
+  overflow-y: scroll; }
 
-body { font: normal 15px "Arial", sans-serif; padding: 0; background: url('../img/bg-site.gif') 0 0 repeat; color: #333; letter-spacing: 0; overflow-y: scroll; }
-body.modal-on { overflow: hidden; }
-body.node-type-webform { background: #fff; }
+body.modal-on {
+  overflow: hidden; }
 
-h1 { font: normal 35px "Kelmscott", "Georgia", "Times New Roman", sans-serif; overflow: hidden; padding: 0; text-align: center; }
-h2 { font: normal 35px/40px "ChunkFive", "Arial", sans-serif; color: #000; letter-spacing: 2px; padding: 50px 0 20px 5px; }
-.pure-selfishness h2 { padding: 0 0 3px; }
-h2 em { font-style: normal; background: url('../img/accent.png') 5px -4px no-repeat; }
-h2 a { font: normal 14px/14px "Arial", sans-serif; letter-spacing: 0; display: inline; vertical-align: middle; }
-h4 { font: normal 25px/30px "ChunkFive", "Arial", sans-serif; }
-h6 { font: normal 20px/20px "ChunkFive", "Arial", sans-serif; text-align: center; }
-.cut h6 { font: bold 20px/20px "Arial", sans-serif; text-align: left; padding: 15px 0 0; }
-.page-technology-hardware h4 { font: bold 25px/25px "Arial", sans-serif; }
-a:link, a:visited { color: #26839a; text-decoration: none; font-weight: bold; }
-a:hover { color: #d1af28; }
-p { font: normal 14px/22px "Arial", sans-serif; padding: 0 0 20px; color: #5f5153; }
-strong { font-weight: bold; }
-em { font-style: italic; }
-sub { vertical-align: baseline; font-size: 70%; }
+body.node-type-webform {
+  background: #fff; }
 
-#coastline { width: 960px; margin: 0 auto; }
+/* Headings
+=============================================*/
+h1 {
+  font: normal 35px/36px "Kelmscott", "Georgia", "Times New Roman", sans-serif;
+  overflow: hidden;
+  padding: 40px 0 20px;
+  text-align: center; }
 
-.pure-selfishness { border: 25px solid #33badc; padding: 30px 30px 25px; margin: 0 5px; background: #e3f9ff; }
+h2 {
+  font: normal 35px/40px "ChunkFive", "Arial", sans-serif;
+  color: #000;
+  letter-spacing: 2px;
+  padding: 50px 0 20px 0; }
 
-.the-best-work-youve-ever-seen { width: auto; }
-.work-list { overflow: hidden; }
-.work-list li { width: 220px; height: 195px; background: #fcfcfc; float: left; margin: 0 10px 20px; text-align: center; position: relative; }
-.work-list li a { border: 10px solid #33badc; display: block; overflow: hidden; height: 172px; }
-.work-list li.on a { border-color: #d1af28; }
-.work-list li img { width: 200px; height: auto; display: block; }
-.work-list li .details { display: none; }
-.work-list li h4 { font: normal 23px/26px "ChunkFive", "Arial", sans-serif; position: absolute; left: 0; top: 0; color: #000; padding: 20px 20px 0 20px; display: none; width: 180px; }
-.work-list li a.title { color: #000; font-weight: normal; border: none; height: auto; }
-.work-list li ul {  }
-.work-list li ul li {  }
+h2 em {
+  font-style: normal;
+  background: url("../img/accent.png") 5px -4px no-repeat; }
 
-.the-boring-stuff { overflow: hidden; }
+h2 a {
+  font: normal 14px/14px "Arial", sans-serif;
+  letter-spacing: 0;
+  display: inline;
+  vertical-align: middle; }
 
-.cut { width: 46%; float: left; padding: 0 4% 0 7px; }
-.cut-end { padding: 0; }
-.cut dl { overflow: hidden; padding: 15px 20px 30px 0; }
-.cut dt { font-weight: bold; font-style: italic; }
-.cut dd { padding: 0 0 20px; }
-.cut dl.dated { padding: 0 20px 30px 10px; }
-.cut dl.dated dt { padding: 15px 0 0; }
-.cut dl.dated dd { padding: 0; }
-.cut span.time { float: right; padding: 15px 20px 0 0; font-style: italic; font-weight: bold; }
-.cut dl span.time { padding: 0; }
+h4 {
+  font: normal 25px/30px "ChunkFive", "Arial", sans-serif; }
 
+h6 {
+  font: normal 20px/20px "ChunkFive", "Arial", sans-serif;
+  margin: 0 auto;
+  text-align: center;
+  width: 320px; }
 
-a.download { display: block; clear: both; }
+a:link, a:visited {
+  color: #26839a;
+  text-decoration: none;
+  font-weight: bold; }
 
-.header { padding: 30px 0 0; }
-.header h1 { background: url('../img/logo.png') center bottom no-repeat; padding: 0 0 210px; margin: 0 0 12px; }
-.header h6 { padding: 0 0 40px; width: 300px; margin: 0 auto; }
+a:hover {
+  color: #d1af28; }
 
+p {
+  font: normal 14px/22px "Arial", sans-serif;
+  padding: 0 0 20px;
+  color: #5f5153; }
 
-.footer { clear: both; padding: 30px 0 20px 25px; border-top: 15px solid #33badc; margin: 40px 0 0; }
+strong {
+  font-weight: bold; }
 
+em {
+  font-style: italic; }
 
+sub {
+  vertical-align: baseline;
+  font-size: 70%; }
 
-.modal-bg { /*display: none;*/ background: url('../img/bg-modal.png') 0 0 repeat; position: absolute; top: 0; left: 0; height: 100%; display: none; width: 100%; }
-.all-modal { width: 100%; height: 100%; overflow: auto; position: fixed; top: 0; left: 0; display: none; }
-.modal { width: 645px; display: none; background: #fff; margin: 70px auto 0; position: relative; z-index: 5; }
-.modal .modal-content { padding: 32px 30px; }
+#coastline {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1400px; }
 
-.modal .modal-content li { display: none; }
-.modal .modal-content li.current { display: block; }
+/* Header Styles
+=============================================*/
+header {
+  padding: 25px 0 0; }
+  header h1 {
+    margin: 0 0 12px;
+    padding: 0; }
+  header .logo {
+    display: block;
+    margin: 0 auto 20px; }
 
-.modal img { width: 587px; height: auto; }
-.modal h2 { padding: 0; }
-.modal a.site-link { float: right; }
-.modal dl { overflow: hidden; font: bold 13px/18px "Arial", sans-serif; padding: 0 0 10px; }
-.modal dt { float: left; }
-.modal dd { margin: 0 0 0 100px; font-weight: normal; }
-.modal h6 { font: italic normal 25px/25px "Georgia", "Times New Roman", serif; color: #0675B1; }
-.modal .nav { overflow: hidden; padding: 20px 0 0; }
-.modal .nav a { float: left; width: 41px; height: 0; padding: 41px 0 0; overflow: hidden; background: url('../img/bg-modal-prev.jpg') 0 0 no-repeat; }
-.modal .nav span { float: left; font: italic normal 17px/20px "Georgia", "Times New Roman", serif; color: #858384; padding: 11px 10px 0; }
-.modal .nav span.off { padding: 11px 10px 0 0; }
-.modal .nav a.prev {  }
-.modal .nav a.next { background-image: url('../img/bg-modal-next.jpg'); }
-.modal .nav a:hover { background-position: 0 -41px; }
-.modal .nav a.off { background-position: 0 -82px; cursor: default; }
-.modal em, .modal strong { font-style: normal; font-weight: normal; }
-a.button-close { width: 35px; height: 35px; background: url('../img/bg-close.png') 0 0 no-repeat; position: absolute; right: -10px; top: -10px; margin: 0; }
-a.button-close:hover { background-position: 0 -35px; }
+/* Main Content Styles
+=============================================*/
+section.the-boring-stuff {
+  overflow: hidden; }
+  section.the-boring-stuff h2 {
+    padding: 50px 0 20px 2%; }
+section.pure-selfishness {
+  background: #fff;
+  border: 25px solid #33badc;
+  margin: 30px 0 0;
+  padding: 2%; }
+  section.pure-selfishness h2 {
+    padding: 10px 0 20px 0; }
 
+.work-list {
+  list-style-type: none;
+  text-align: center; }
+  .work-list li {
+    border: 14px solid #26839a;
+    display: inline-block;
+    margin: 10px 0.5% 10px;
+    overflow: hidden;
+    position: relative;
+    vertical-align: top;
+    width: 22%; }
+    .work-list li.more {
+      display: none; }
+    .work-list li .details {
+      display: none; }
+    .work-list li h4 {
+      margin: 0 auto;
+      text-align: left; }
+    .work-list li img {
+      display: block;
+      height: auto;
+      opacity: 0.9;
+      width: 100%;
+      -webkit-transition: all 0.2s linear;
+      -moz-transition: all 0.2s linear;
+      -ms-transition: all 0.2s linear;
+      -o-transition: all 0.2s linear;
+      transition: all 0.2s linear; }
+    .work-list li a.title {
+      bottom: 28px;
+      left: 8px;
+      opacity: 0;
+      position: absolute;
+      width: 87%;
+      -webkit-transform: rotate(10deg);
+      -moz-transform: rotate(10deg);
+      -ms-transform: rotate(10deg);
+      -o-transform: rotate(10deg);
+      transform: rotate(10deg);
+      -webkit-transition: all 0.1s linear;
+      -moz-transition: all 0.1s linear;
+      -ms-transition: all 0.1s linear;
+      -o-transition: all 0.1s linear;
+      transition: all 0.1s linear; }
+    .work-list li:hover {
+      background: #fff;
+      border-color: #d1af28; }
+      .work-list li:hover img {
+        opacity: 0.1; }
+      .work-list li:hover a.title {
+        bottom: 8px;
+        color: #26839a;
+        opacity: 1;
+        -webkit-transform: rotate(0);
+        -moz-transform: rotate(0);
+        -ms-transform: rotate(0);
+        -o-transform: rotate(0);
+        transform: rotate(0); }
 
+.cut {
+  display: inline-block;
+  padding: 0 2%;
+  vertical-align: top;
+  width: 46%; }
+  .cut h4 {
+    margin: 0;
+    padding: 30px 0 10px; }
+  .cut h6 {
+    font: bold 20px/20px "Arial", sans-serif;
+    margin: 0;
+    padding: 20px 0 10px;
+    text-align: left; }
+  .cut dl {
+    overflow: hidden;
+    padding: 15px 20px 30px 0; }
+    .cut dl dt {
+      font-weight: bold;
+      font-style: italic; }
+    .cut dl dd {
+      padding: 0 0 20px; }
+    .cut dl span.time {
+      padding: 0; }
+    .cut dl.dated {
+      padding: 0 20px 30px 10px; }
+      .cut dl.dated dt {
+        padding: 15px 0 0; }
+      .cut dl.dated dd {
+        padding: 0; }
+  .cut span.time {
+    float: right;
+    padding: 15px 20px 0 0;
+    font-style: italic;
+    font-weight: bold; }
 
+/* Footer Styles
+=============================================*/
+footer {
+  background: #fff;
+  clear: both;
+  padding: 23px 0 20px 25px;
+  border-top: 15px solid #33badc;
+  margin: 40px 0 0; }
 
+.modal-bg {
+  background: url("../img/bg-modal.png") 0 0 repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  display: none;
+  width: 100%; }
 
+.all-modal {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none; }
 
-/* CLEARFIX GOES LAST ALWAYS */
+.modal {
+  width: 80%;
+  display: none;
+  background: #fff;
+  margin: 70px auto 0;
+  position: relative;
+  z-index: 5; }
+  .modal .modal-content {
+    padding: 32px 30px; }
+    .modal .modal-content li {
+      display: none; }
+      .modal .modal-content li.current {
+        display: block; }
+  .modal img {
+    width: 100%;
+    height: auto; }
+  .modal h2 {
+    padding: 0; }
+  .modal a.site-link {
+    display: block;
+    text-align: right;
+    width: 100%; }
+  .modal dl {
+    overflow: hidden;
+    font: bold 13px/18px "Arial", sans-serif;
+    padding: 0 0 10px; }
+  .modal dt {
+    float: left; }
+  .modal dd {
+    margin: 0 0 0 100px;
+    font-weight: normal; }
+  .modal h6 {
+    font: italic normal 25px/25px "Georgia", "Times New Roman", serif;
+    color: #0675B1; }
+  .modal .nav {
+    overflow: hidden;
+    padding: 0 0 20px; }
+    .modal .nav a {
+      float: left;
+      width: 41px;
+      height: 0;
+      padding: 41px 0 0;
+      overflow: hidden;
+      background: url("../img/bg-modal-prev.jpg") 0 0 no-repeat; }
+    .modal .nav span {
+      float: left;
+      font: italic normal 17px/20px "Georgia", "Times New Roman", serif;
+      color: #858384;
+      padding: 11px 10px 0; }
+      .modal .nav span.off {
+        padding: 11px 10px 0 0; }
+    .modal .nav a.next {
+      background-image: url("../img/bg-modal-next.jpg"); }
+    .modal .nav a:hover {
+      background-position: 0 -41px; }
+    .modal .nav a.off {
+      background-position: 0 -82px;
+      cursor: default; }
+  .modal em, .modal strong {
+    font-style: normal;
+    font-weight: normal; }
 
-.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
-.clearfix { display: inline-block; }
+a.button-close {
+  width: 35px;
+  height: 35px;
+  background: url("../img/bg-close.png") 0 0 no-repeat;
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  margin: 0; }
+  a.button-close:hover {
+    background-position: 0 -35px; }
 
-/* Hides from IE-mac \*/ 
-* html .clearfix { height: 1%; }
-.clearfix { display: block; }
-/* End hide from IE-mac */
+/* Media Queries
+=============================================*/
+/* Media Queries
+=============================================*/
+/* Smartphones (all orientations) ----------- */
+@media screen and (max-width: 60em) {
+  .work-list li {
+    width: 48%; }
+
+  .cut {
+    display: block;
+    padding: 0 2%;
+    vertical-align: top;
+    width: auto; } }
+@media screen and (max-width: 44em) {
+  #coastline {
+    margin: 80px auto 0; }
+
+  header {
+    background: #fff;
+    left: 0;
+    overflow: hidden;
+    min-height: 80px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    -ms-box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    -o-box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25); }
+    header h1 {
+      font-size: 32px;
+      margin: 0 0 10px 100px;
+      text-align: left; }
+    header h6 {
+      display: none;
+      font-size: 18px;
+      margin: 0 0 0 100px;
+      text-align: left;
+      width: 290px; }
+    header .logo {
+      height: auto;
+      left: 19px;
+      position: absolute;
+      top: 6px;
+      width: 60px; }
+
+  section.pure-selfishness {
+    background: #fff;
+    border: none;
+    margin: 0;
+    padding: 0; }
+
+  h2.current-section {
+    height: 105px; }
+    h2.current-section span {
+      background: #bcf2ff;
+      font-size: 25px;
+      left: 0;
+      line-height: 30px;
+      padding: 10px 0 2px 18px;
+      position: fixed;
+      top: 80px;
+      width: 100%;
+      z-index: 99; }
+      h2.current-section span em {
+        background-position: 5px -6px; }
+
+  .work-list li {
+    display: none;
+    width: 100%; }
+    .work-list li.shown, .work-list li.more {
+      display: block; }
+    .work-list li.more {
+      background: #bcf2ff;
+      border: none;
+      font: normal 25px/30px "ChunkFive", "Arial", sans-serif;
+      margin: 15px 0 0;
+      padding: 8px 0; }
+  .work-list.show-the-rest li {
+    display: block; }
+
+  .all-modal {
+    top: 80px; }
+    .all-modal .modal {
+      width: 90%; } }
+/* Smartphones (landscape) ----------- */
+@media only screen and (max-width: 480px) and (orientation: landscape) {
+  section#main {
+    /*width: 480px;*/ } }
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width: 320px) and (orientation: portrait) {
+  section#main {
+    /*width: 320px;*/ } }
+/* iPads (landscape) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  section#main {
+    /*width: 1024px;*/ } }
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  section#main {
+    /*width: 768px;*/ } }
+/* Desktops and laptops ----------- */
+@media only screen and (min-width: 1224px) {
+  section#main {
+    /*width: 960px;*/ } }
+/* Large screens ----------- */
+@media only screen and (min-width: 1600px) {
+  section#main {
+    /*width: 1600px;*/ } }
+/* Retina ----------- */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3 / 2), only screen and (min-device-pixel-ratio: 1.5) {
+  img {
+    background-image: url(../img/pic@2x.jpg);
+    -webkit-background-size: 100px 100px;
+    background-size: 100px 100px; } }
+/* Clearfix - if you use proper coding techniques 
+   you shouldn't have to use this anymore
+=============================================*/
+.cf:before,
+.cf:after {
+  content: "";
+  display: table; }
+
+.cf:after {
+  clear: both; }
+
+.cf {
+  *zoom: 1; }
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box; }

@@ -1,0 +1,107 @@
+::-moz-selection {
+    background: #33BADC;
+    color: #fff;
+}
+::selection {
+    background: #33BADC;
+    color: #fff;
+}
+
+div.pure-selfishness::-moz-selection {
+    background: #33BADC;
+    color: #fff;
+}
+div.pure-selfishness::selection {
+    background: #33BADC;
+    color: #fff;
+}
+
+div.header *::-moz-selection, div.header *::-moz-selection {
+    background: #000;
+    color: #fff;
+}
+div.header *::selection, div.header *::selection {
+    background: #000;
+    color: #fff;
+}
+
+/* Style Guide */
+
+body {
+    font: normal 15px "Arial", sans-serif;
+    padding: 0;
+    background: url('../img/bg-site.gif') 0 0 repeat;
+    color: #333;
+    letter-spacing: 0;
+    overflow-y: scroll;
+}
+body.modal-on {
+    overflow: hidden;
+}
+body.node-type-webform {
+    background: #fff;
+}
+
+/* Headings
+=============================================*/
+
+h1 {
+    font: normal 35px/36px "Kelmscott", "Georgia", "Times New Roman", sans-serif;
+    overflow: hidden;
+    padding: 40px 0 20px;
+    text-align: center;
+}
+h2 {
+    font: normal 35px/40px "ChunkFive", "Arial", sans-serif;
+    color: #000;
+    letter-spacing: 2px;
+    padding: 50px 0 20px 0;
+}
+h2 em {
+    font-style: normal;
+    background: url('../img/accent.png') 5px -4px no-repeat;
+}
+h2 a {
+    font: normal 14px/14px "Arial", sans-serif;
+    letter-spacing: 0;
+    display: inline;
+    vertical-align: middle;
+}
+h4 {
+    font: normal 25px/30px "ChunkFive", "Arial", sans-serif;
+}
+h6 {
+    font: normal 20px/20px "ChunkFive", "Arial", sans-serif;
+    margin: 0 auto;
+    text-align: center;
+    width: 320px;
+}
+a:link, a:visited {
+    color: #26839a;
+    text-decoration: none;
+    font-weight: bold;
+}
+a:hover {
+    color: #d1af28;
+}
+p {
+    font: normal 14px/22px "Arial", sans-serif;
+    padding: 0 0 20px;
+    color: #5f5153;
+}
+strong {
+    font-weight: bold;
+}
+em {
+    font-style: italic;
+}
+sub {
+    vertical-align: baseline;
+    font-size: 70%;
+}
+
+#coastline {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1400px;
+}
