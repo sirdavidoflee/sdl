@@ -18,6 +18,27 @@ header {
         display: block;
         margin: 0 auto 20px;
     }
+    
+    .places {
+        right: 20px;
+        position: absolute;
+        top: 20px;
+        
+        li {
+            display: inline-block;
+            font-size: 25px;
+            line-height: 30px;
+            list-style-type: none;
+            
+            a {
+                color: #000;
+                
+                &:hover {
+                    color: #33badc;
+                }
+            }
+        }
+    }
 }
 
 
@@ -371,6 +392,13 @@ a.button-close {
             position: absolute;
             top: 6px;
             width: 60px;
+        }
+        
+        .places {
+            position: fixed;
+            right: 3px;
+            top: 87px;
+            z-index: 10;
         }
     }
     
